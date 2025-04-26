@@ -13,11 +13,11 @@ def show_menu():
 def add_task():
     task = input("Enter task: ")
     tasks.append(task)
-    print("✅ Task added.")
+    print("Task added.")
 
 def view_tasks():
     if not tasks:
-        print("⚠️ No tasks yet!")
+        print(" No tasks yet!")
     else:
         print("\nYour Tasks:")
         for idx, task in enumerate(tasks, start=1):
@@ -30,11 +30,11 @@ def update_task():
         if 0 < task_num <= len(tasks):
             new_task = input("Enter the updated task: ")
             tasks[task_num - 1] = new_task
-            print("✅ Task updated.")
+            print(" Task updated.")
         else:
-            print("⚠️ Invalid task number.")
+            print(" Invalid task number.")
     except ValueError:
-        print("⚠️ Please enter a valid number.")
+        print(" Please enter a valid number.")
 
 def delete_task():
     view_tasks()
@@ -42,11 +42,11 @@ def delete_task():
         task_num = int(input("Enter task number to delete: "))
         if 0 < task_num <= len(tasks):
             deleted_task = tasks.pop(task_num - 1)
-            print(f"✅ Deleted task: {deleted_task}")
+            print(f" Deleted task: {deleted_task}")
         else:
-            print("⚠️ Invalid task number.")
+            print(" Invalid task number.")
     except ValueError:
-        print("⚠️ Please enter a valid number.")
+        print(" Please enter a valid number.")
 
 while True:
     show_menu()
@@ -61,7 +61,7 @@ while True:
     elif choice == "4":
         delete_task()
     elif choice == "5":
-        print("👋 Exiting... Bye!")
+        print(" Exiting... Bye!")
         break
     else:
-        print("⚠️ Invalid choice. Try again.")
+        print(" Invalid choice. Try again.")
